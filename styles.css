@@ -1,0 +1,282 @@
+/* ===== Unity Support Drive — Design Tokens =====
+Color: --ink (charcoal text), --teal (deep trust/unity), --coral (CTA/accent),
+       --cream (page bg), --sand (card/border), --gold (progress fill)
+Type: Display = Fraunces (characterful serif), Body = Inter, Utility/numbers = IBM Plex Mono
+Signature: interlocking arcs ("unity marks") used in progress bars + section dividers
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
+
+:root {
+  --ink: #2A2A28;
+  --ink-soft: #5B5750;
+  --teal: #1B4B43;
+  --teal-deep: #123630;
+  --coral: #E8704A;
+  --coral-deep: #CF5B36;
+  --cream: #FAF6F0;
+  --sand: #E5DDD0;
+  --sand-deep: #D6CBB6;
+  --gold: #C9A14B;
+  --white: #FFFFFF;
+
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --shadow-card: 0 6px 24px rgba(27, 75, 67, 0.08);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.55;
+}
+
+h1, h2, h3, .display {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--teal-deep);
+  margin: 0;
+}
+
+.mono { font-family: 'IBM Plex Mono', monospace; }
+
+a { color: inherit; text-decoration: none; }
+
+img { max-width: 100%; display: block; }
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* ===== Header ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--cream);
+  border-bottom: 1px solid var(--sand);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--teal-deep);
+}
+.logo .mark { width: 30px; height: 30px; flex-shrink: 0; }
+.header-actions { display: flex; gap: 12px; align-items: center; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.btn-primary { background: var(--coral); color: var(--white); }
+.btn-primary:hover { background: var(--coral-deep); transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: var(--teal-deep); border: 1.5px solid var(--sand-deep); }
+.btn-ghost:hover { background: var(--sand); }
+.btn-block { width: 100%; }
+.btn-lg { padding: 16px 28px; font-size: 1.05rem; }
+
+/* ===== Unity mark (signature element) =====
+   Two interlocking arcs — used as the literal logo mark AND
+   the fill-cap shape on every progress bar across the site. */
+.unity-arcs { display: block; }
+
+/* ===== Hero ===== */
+.hero {
+  padding: 64px 0 56px;
+  border-bottom: 1px solid var(--sand);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+}
+.hero h1 {
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  line-height: 1.06;
+}
+.hero p.lead {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  max-width: 480px;
+  margin-top: 18px;
+}
+.hero-cta { margin-top: 30px; display: flex; gap: 14px; flex-wrap: wrap; }
+.hero-stats {
+  margin-top: 38px;
+  display: flex;
+  gap: 36px;
+}
+.hero-stat .num { font-size: 1.6rem; font-weight: 600; color: var(--teal-deep); }
+.hero-stat .label { font-size: 0.85rem; color: var(--ink-soft); }
+
+.hero-art {
+  position: relative;
+  background: var(--teal);
+  border-radius: var(--radius-lg);
+  aspect-ratio: 4/3.4;
+  overflow: hidden;
+}
+
+/* ===== Section labels ===== */
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 28px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.section-head h2 { font-size: 1.8rem; }
+.section-head .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  color: var(--coral-deep);
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 8px;
+  display: block;
+}
+
+section.band { padding: 64px 0; }
+section.band.alt { background: var(--white); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand); }
+
+/* ===== Campaign cards ===== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+.campaign-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--sand);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.campaign-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(27,75,67,0.14); }
+.card-photo {
+  aspect-ratio: 16/11;
+  background: linear-gradient(135deg, var(--sand) 0%, var(--sand-deep) 100%);
+  position: relative;
+}
+.card-tag {
+  position: absolute; top: 14px; left: 14px;
+  background: var(--teal-deep); color: var(--white);
+  font-size: 0.72rem; font-weight: 600; padding: 5px 11px; border-radius: 999px;
+}
+.card-body { padding: 18px 20px 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.card-body h3 { font-size: 1.2rem; line-height: 1.3; }
+.card-body p { font-size: 0.92rem; color: var(--ink-soft); margin: 0; flex: 1; }
+
+/* progress bar — signature unity-arc cap at the fill edge */
+.progress-wrap { margin-top: 4px; }
+.progress-track {
+  position: relative;
+  height: 8px;
+  background: var(--sand);
+  border-radius: 999px;
+  overflow: visible;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold), var(--coral));
+  border-radius: 999px;
+}
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 0.85rem;
+}
+.progress-meta .raised { font-weight: 700; color: var(--teal-deep); font-family: 'IBM Plex Mono', monospace; }
+.progress-meta .goal { color: var(--ink-soft); font-family: 'IBM Plex Mono', monospace; }
+.donor-count { font-size: 0.8rem; color: var(--ink-soft); margin-top: 4px; }
+
+/* ===== How it works ===== */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.step { padding: 6px; }
+.step .step-icon {
+  width: 46px; height: 46px;
+  margin-bottom: 16px;
+}
+.step h3 { font-size: 1.1rem; margin-bottom: 8px; }
+.step p { color: var(--ink-soft); font-size: 0.92rem; margin: 0; }
+
+/* ===== Footer ===== */
+footer.site-footer {
+  background: var(--teal-deep);
+  color: #DCE7E2;
+  padding: 56px 0 30px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 32px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.footer-grid h4 { color: var(--white); font-size: 0.9rem; margin-bottom: 14px; font-family: 'Inter'; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; }
+.footer-grid a { display: block; color: #B9C9C3; font-size: 0.9rem; margin-bottom: 9px; }
+.footer-grid a:hover { color: var(--white); }
+.footer-logo { color: var(--white); font-family: 'Fraunces', serif; font-size: 1.3rem; margin-bottom: 12px; display:flex; align-items:center; gap: 10px;}
+.footer-tag { color: #B9C9C3; font-size: 0.88rem; max-width: 320px; }
+.footer-bottom { padding-top: 22px; display: flex; justify-content: space-between; font-size: 0.8rem; color: #8FA59E; flex-wrap: wrap; gap: 10px; }
+
+/* ===== Responsive ===== */
+@media (max-width: 980px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-art { order: -1; aspect-ratio: 16/9; }
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .card-grid { grid-template-columns: 1fr; }
+  .header-inner { flex-wrap: wrap; gap: 12px; }
+  .hero { padding: 40px 0; }
+  .hero-stats { gap: 22px; flex-wrap: wrap; }
+  .footer-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}
