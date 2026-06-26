@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Help Maria recover after surgery — Unity Support Drive</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .camp-wrap { padding: 36px 0 80px; }
+  .camp-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 44px;
+    align-items: start;
+  }
+  .camp-photo {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 16/10;
+    background: linear-gradient(135deg, var(--sand), var(--sand-deep));
+    position: relative;
+    margin-bottom: 28px;
+  }
+  .camp-photo svg { width: 100%; height: 100%; }
+  .breadcrumb { font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 18px; }
+  .breadcrumb a { color: var(--teal); font-weight: 600; }
+  .camp-title { font-size: 2rem; line-height: 1.15; margin-bottom: 10px; }
+  .organizer-line { font-size: 0.95rem; color: var(--ink-soft); margin-bottom: 28px; }
+  .organizer-line strong { color: var(--ink); }
+  .camp-tabs {
+    display: flex; gap: 28px;
+    border-bottom: 1.5px solid var(--sand);
+    margin-bottom: 26px;
+  }
+  .camp-tabs a {
+    padding: 12px 2px;
+    font-weight: 600;
+    color: var(--ink-soft);
+    border-bottom: 2.5px solid transparent;
+    font-size: 0.95rem;
+  }
+  .camp-tabs a.active { color: var(--teal-deep); border-color: var(--coral); }
+  .story p { margin: 0 0 18px; color: var(--ink); font-size: 1.02rem; }
+  .story h3 { font-size: 1.15rem; margin: 30px 0 12px; }
+
+  .donate-panel {
+    background: var(--white);
+    border: 1px solid var(--sand);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+    padding: 26px 24px;
+    position: sticky;
+    top: 96px;
+  }
+  .panel-raised { font-size: 1.7rem; font-weight: 700; color: var(--teal-deep); font-family: 'IBM Plex Mono', monospace; }
+  .panel-goal { color: var(--ink-soft); font-size: 0.92rem; margin: 4px 0 14px; font-family: 'IBM Plex Mono', monospace;}
+  .panel-stats { display:flex; gap: 18px; font-size: 0.85rem; color: var(--ink-soft); margin: 14px 0 20px; }
+  .panel-stats strong { color: var(--ink); display:block; font-size: 1rem;}
+  .share-row { display: flex; gap: 10px; margin-top: 14px; }
+  .share-row .btn-ghost { flex: 1; padding: 11px; }
+
+  .organizer-card {
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid var(--sand);
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+  .avatar {
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--teal); flex-shrink: 0;
+    display:flex; align-items:center; justify-content:center;
+    color: var(--cream); font-family:'Fraunces'; font-weight:600;
+  }
+  .organizer-card .name { font-weight: 700; font-size: 0.95rem; }
+  .organizer-card .role { font-size: 0.82rem; color: var(--ink-soft); }
+
+  .recent-donations { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--sand); }
+  .recent-donations h4 { font-size: 0.95rem; margin-bottom: 14px; }
+  .donation-row { display: flex; justify-content: space-between; font-size: 0.88rem; padding: 9px 0; border-bottom: 1px dashed var(--sand); }
+  .donation-row .who { font-weight: 600; }
+  .donation-row .amt { color: var(--teal-deep); font-family:'IBM Plex Mono', monospace; }
+  .donation-row .when { color: var(--ink-soft); font-size: 0.78rem; display:block; }
+
+  @media (max-width: 980px) {
+    .camp-grid { grid-template-columns: 1fr; }
+    .donate-panel { position: static; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <svg class="mark unity-arcs" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M5 22C5 13 11 7 19 7" stroke="#E8704A" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M27 10C27 19 21 25 13 25" stroke="#1B4B43" stroke-width="3.4" stroke-linecap="round"/>
+      </svg>
+      Unity Support Drive
+    </a>
+    <nav class="header-actions">
+      <a class="btn btn-ghost" href="index.html#campaigns">Find a fundraiser</a>
+      <a class="btn btn-primary" href="campaign.html">Start a fundraiser</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container camp-wrap">
+  <div class="breadcrumb"><a href="index.html">Home</a> / <a href="index.html#campaigns">Medical fundraisers</a> / Help Maria recover after surgery</div>
+
+  <div class="camp-grid">
+    <div>
+      <div class="camp-photo">
+        <svg viewBox="0 0 600 380" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder campaign photo">
+          <rect width="600" height="380" fill="#1B4B43"/>
+          <path d="M60 320C60 200 160 110 320 110" stroke="#E8704A" stroke-width="22" stroke-linecap="round" fill="none" opacity="0.9"/>
+          <path d="M540 130C540 250 440 320 280 320" stroke="#C9A14B" stroke-width="22" stroke-linecap="round" fill="none" opacity="0.8"/>
+        </svg>
+      </div>
+
+      <h1 class="camp-title">Help Maria recover after surgery</h1>
+      <div class="organizer-line">Organized by <strong>Janet Cole</strong> · Family friend · <span class="mono">Los Angeles, CA</span></div>
+
+      <div class="camp-tabs">
+        <a href="#" class="active">Story</a>
+        <a href="#">Updates (3)</a>
+        <a href="#">Comments (42)</a>
+      </div>
+
+      <div class="story">
+        <p>Three weeks ago, Maria underwent emergency surgery after a sudden medical complication. She's recovering well, but the road ahead includes physical therapy, follow-up procedures, and weeks away from work as a home health aide — income her family depends on.</p>
+        <p>Maria has spent years showing up for other people's families as a caregiver. Now her own family needs a hand. Every dollar raised here goes directly toward her medical bills, rehab sessions, and basic household costs while she heals.</p>
+        <h3>Where the funds are going</h3>
+        <p>Hospital co-pays and follow-up visits, outpatient physical therapy, and covering rent during her recovery period when she's unable to work.</p>
+        <h3>How you can help</h3>
+        <p>A donation of any size helps close the gap. If you can't give right now, sharing this page with your own network goes a long way too.</p>
+      </div>
+    </div>
+
+    <aside class="donate-panel">
+      <div class="panel-raised mono">$12,840 raised</div>
+      <div class="panel-goal">of $20,000 goal</div>
+      <div class="progress-track"><div class="progress-fill" style="width:64%"></div></div>
+
+      <div class="panel-stats">
+        <div><strong>186</strong>donations</div>
+        <div><strong>9</strong>days left</div>
+      </div>
+
+      <div id="donate-amounts" style="display:flex; gap:8px; margin-bottom:14px;">
+        <button class="btn btn-ghost amount-btn" data-amount="25">$25</button>
+        <button class="btn btn-ghost amount-btn" data-amount="50">$50</button>
+        <button class="btn btn-ghost amount-btn" data-amount="100">$100</button>
+      </div>
+      <input id="custom-amount" type="number" min="1" step="1" placeholder="Custom amount (USD)"
+        style="width:100%; padding:12px 14px; border:1.5px solid var(--sand-deep); border-radius:10px; font-family:'IBM Plex Mono',monospace; margin-bottom:14px;">
+      <button id="donate-btn" class="btn btn-primary btn-lg btn-block" data-campaign-id="help-maria-recover">Donate now</button>
+      <div id="donate-error" style="color:#B3261E; font-size:0.85rem; margin-top:8px; display:none;"></div>
+      <div class="share-row">
+        <a href="#" class="btn btn-ghost">Share</a>
+        <a href="#" class="btn btn-ghost">Follow</a>
+      </div>
+
+      <div class="organizer-card">
+        <div class="avatar">JC</div>
+        <div>
+          <div class="name">Janet Cole</div>
+          <div class="role">Organizer</div>
+        </div>
+      </div>
+
+      <div class="recent-donations">
+        <h4>Recent donations</h4>
+        <div class="donation-row">
+          <div><span class="who">Anonymous</span><span class="when">2 hours ago</span></div>
+          <span class="amt">$50</span>
+        </div>
+        <div class="donation-row">
+          <div><span class="who">Devon R.</span><span class="when">5 hours ago</span></div>
+          <span class="amt">$100</span>
+        </div>
+        <div class="donation-row">
+          <div><span class="who">Priya S.</span><span class="when">Yesterday</span></div>
+          <span class="amt">$25</span>
+        </div>
+        <div class="donation-row">
+          <div><span class="who">Anonymous</span><span class="when">2 days ago</span></div>
+          <span class="amt">$200</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container footer-bottom" style="border-top:none; padding-top:0;">
+    <span>© 2026 Unity Support Drive. All rights reserved.</span>
+    <span>Demo template — placeholder content for design purposes.</span>
+  </div>
+</footer>
+
+<script>
+  // Point this at wherever the backend (server.js) is actually running.
+  // Locally that's http://localhost:4242 — update after you deploy the backend.
+  const API_BASE = 'http://localhost:4242';
+
+  let selectedAmount = null;
+  const amountBtns = document.querySelectorAll('.amount-btn');
+  const customInput = document.getElementById('custom-amount');
+  const donateBtn = document.getElementById('donate-btn');
+  const errorBox = document.getElementById('donate-error');
+
+  amountBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      amountBtns.forEach((b) => b.classList.remove('btn-primary'));
+      btn.classList.add('btn-primary');
+      selectedAmount = Number(btn.dataset.amount);
+      customInput.value = '';
+    });
+  });
+
+  customInput.addEventListener('input', () => {
+    amountBtns.forEach((b) => b.classList.remove('btn-primary'));
+    selectedAmount = Number(customInput.value);
+  });
+
+  donateBtn.addEventListener('click', async () => {
+    const amount = selectedAmount || Number(customInput.value);
+    errorBox.style.display = 'none';
+
+    if (!amount || amount < 1) {
+      errorBox.textContent = 'Please choose or enter a donation amount (minimum $1).';
+      errorBox.style.display = 'block';
+      return;
+    }
+
+    donateBtn.disabled = true;
+    donateBtn.textContent = 'Redirecting to secure checkout…';
+
+    try {
+      const response = await fetch(`${API_BASE}/api/checkout-session`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          campaignId: donateBtn.dataset.campaignId,
+          amount,
+          donorName: 'Guest',
+          anonymous: false,
+        }),
+      });
+
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || 'Could not start checkout');
+
+      // Stripe-hosted Checkout page — this is the actual "link will be for stripe".
+      window.location.href = data.url;
+    } catch (err) {
+      errorBox.textContent = err.message || 'Something went wrong. Please try again.';
+      errorBox.style.display = 'block';
+      donateBtn.disabled = false;
+      donateBtn.textContent = 'Donate now';
+    }
+  });
+</script>
+</body>
+</html>
